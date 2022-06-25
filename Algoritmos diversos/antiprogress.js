@@ -17,23 +17,25 @@ while (cont < n - 3){
     for(let c = 0; c < ant.length; c++){
         for(let i = 0; i < ant.length; i++){
             for(let j = 0; j < ant.length; j++){
-                if((ant[c] < ant[i]) && (ant[i] < ant[j]) && (ant[j] == 2*ant[i] - ant[c]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
-                }
-                else if((ant[c] < ant[j]) && (ant[j] < ant[i]) && (ant[i] == 2*ant[j] - ant[c]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
-                }
-                else if((ant[i] < ant[j]) && (ant[j] < ant[c]) && (ant[c] == 2*ant[j] - ant[i]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
-                }
-                else if((ant[i] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[i]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
-                }
-                else if((ant[j] < ant[i]) && (ant[i] < ant[c]) && (ant[c] == 2*ant[i] - ant[j]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
-                }
-                else if((ant[j] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[j]) && (i != j) && (i != c) && (c != j)){
-                    conterros++;
+                if ((i != j) && (i != c) && (c != j)){
+                    if((ant[c] < ant[i]) && (ant[i] < ant[j]) && (ant[j] == 2*ant[i] - ant[c])){
+                        conterros++;
+                    }
+                    else if((ant[c] < ant[j]) && (ant[j] < ant[i]) && (ant[i] == 2*ant[j] - ant[c])){
+                        conterros++;
+                    }
+                    else if((ant[i] < ant[j]) && (ant[j] < ant[c]) && (ant[c] == 2*ant[j] - ant[i])){
+                        conterros++;
+                    }
+                    else if((ant[i] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[i])){
+                        conterros++;
+                    }
+                    else if((ant[j] < ant[i]) && (ant[i] < ant[c]) && (ant[c] == 2*ant[i] - ant[j])){
+                        conterros++;
+                    }
+                    else if((ant[j] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[j])){
+                        conterros++;
+                    }
                 }
             }
         }
