@@ -6,36 +6,34 @@
 // Qual é o N-ésimo termo desta sequência?
 
 
-var ant = [0, 1, 3];
-var conterros = 0;
-var prox = ant[ant.length-1] + 1;
-var cont = 0;
-var n = parseInt(prompt(''));
+let ant = [0, 1, 3];
+let conterros = 0;
+let prox = ant[ant.length-1] + 1;
+let cont = 0;
+let n = parseInt(prompt(''));
 
 while (cont < n - 3){
     ant.push(prox);
     for(let c = 0; c < ant.length; c++){
         for(let i = 0; i < ant.length; i++){
-            for(let j = 0; j < ant.length; j++){
-                if ((i != j) && (i != c) && (c != j)){
-                    if((ant[c] < ant[i]) && (ant[i] < ant[j]) && (ant[j] == 2*ant[i] - ant[c])){
+            if (i != c){
+                if((ant[c] < ant[i]) && (ant[i] < prox) && (prox == 2*ant[i] - ant[c])){
                         conterros++;
-                    }
-                    else if((ant[c] < ant[j]) && (ant[j] < ant[i]) && (ant[i] == 2*ant[j] - ant[c])){
+                }
+                else if((ant[c] < prox) && (prox < ant[i]) && (ant[i] == 2*prox - ant[c])){
                         conterros++;
-                    }
-                    else if((ant[i] < ant[j]) && (ant[j] < ant[c]) && (ant[c] == 2*ant[j] - ant[i])){
+                }
+                else if((ant[i] < ant[c]) && (ant[c] < prox) && (prox == 2*ant[c] - ant[i])){
                         conterros++;
-                    }
-                    else if((ant[i] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[i])){
+                }
+                else if((ant[i] < prox) && (prox < ant[c]) && (ant[c] == 2*prox - ant[i])){
                         conterros++;
-                    }
-                    else if((ant[j] < ant[i]) && (ant[i] < ant[c]) && (ant[c] == 2*ant[i] - ant[j])){
+                }
+                else if((prox < ant[i]) && (ant[i] < ant[c]) && (ant[c] == 2*ant[i] - prox)){
                         conterros++;
-                    }
-                    else if((ant[j] < ant[c]) && (ant[c] < ant[j]) && (ant[j] == 2*ant[c] - ant[j])){
+                }
+                else if((prox < ant[c]) && (ant[c] < ant[i]) && (ant[i] == 2*ant[c] - prox)){
                         conterros++;
-                    }
                 }
             }
         }
